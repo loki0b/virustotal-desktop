@@ -1,0 +1,26 @@
+{
+  "name": "virustotal-dekstop",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron --no-sandbox .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hgl0b/virustotal-dekstop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hgl0b/virustotal-dekstop/issues"
+  },
+  "homepage": "https://github.com/hgl0b/virustotal-dekstop#readme",
+  "description": "",
+  "dependencies": {
+    "npm": "^11.4.1"
+  },
+  "devDependencies": {
+    "electron": "^36.3.2"
+  }
+}
