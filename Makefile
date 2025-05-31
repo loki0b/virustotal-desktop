@@ -5,7 +5,7 @@ TARGET = main.cpp
 LIBS = -lcurl
 
 all:
-	g++ $(SRC)$(TARGET).cpp $(CFLAGS) $(LDFLAGS) $(LIBS) -o $bin/main
+	g++ $(SRC)$(TARGET) $(CFLAGS) $(LDFLAGS) $(LIBS) -o $bin/main
 
 run:
 	./bin/main
