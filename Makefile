@@ -1,9 +1,11 @@
 CFLAGS = -I$(HOME)/include
 LDFLAGS = -L$(HOME)/lib
 SRC = src/
+TARGET = main.cpp
+LIBS = -lcurl
 
 all:
-	g++ $(SRC)main.cpp $(CFLAGS) $(LDFLAGS) -lcurl -o bin/main
+	g++ $(SRC)$(TARGET).cpp $(CFLAGS) $(LDFLAGS) $(LIBS) -o $bin/main
 
 run:
 	./bin/main
