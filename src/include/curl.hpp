@@ -7,10 +7,10 @@ class Curl {
 public:
     Curl();
     ~Curl();
-    CURL* getHandle() const;
     static size_t write_data(void *buffer, size_t size, size_t nmemb, void *userp);
+    void newHandle();
+    void deleteHandle();
 private:
-    CURL *handle;
 };
 
 #endif
