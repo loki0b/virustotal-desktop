@@ -1,5 +1,3 @@
-#include <string>
-#include <curl/curl.h>
 #include "request.hpp"
 
 using std::string;
@@ -19,6 +17,13 @@ void Request::setHeader(string *headers) {
     // n = N(headers)
     i = 0;
     while (i < n) {
-        this->headers = curl_slist_append(this->headers, headers[i].c_str());
+        this->header = curl_slist_append(this->header, headers[i].c_str());
     }
+}
+
+void Request::initHandle() {
+    handle = curl_easy_init();
+}
+void Request::cleanHandle() {
+    curl_easy_cleanup(handle);
 }

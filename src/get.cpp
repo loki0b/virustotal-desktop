@@ -1,4 +1,3 @@
-#include <curl/curl.h>
 #include "get.hpp"
 
 using std::string;
@@ -12,16 +11,17 @@ Get::~Get() {
 }
 
 void Get::request() {
-    CURL *hnd;
     CURLcode ret;
 
-    hnd = curl_easy_init();
-
-    curl_easy_setopt(hnd, CURLOPT_URL, url);
-    curl_easy_setopt(hnd, CURLOPT_CUSTOMREQUEST, GET);
-    curl_easy_setopt(hnd, CURLOPT_HTTPHEADER, headers);
-    curl_easy_setopt(hnd, CURLOPT_WRITEDATA, write_data);
+    this->initHandle();
+    // setHeader()
+    curl_easy_setopt(this->handle, CURLOPT_WRITEDATA, write_data);
+    curl_easy_setopt(this->handle, CURLOPT_URL, url);
+    curl_easy_setopt(this->handle, CURLOPT_CUSTOMREQUEST, GET);
+    curl_easy_setopt(this->handle, CURLOPT_HTTPHEADER, this->header);
+    
     
 
-    ret = curl_easy_perform(hnd);
+    ret = curl_easy_perform(this->handle);
+    this->cleanHandle();
 }
