@@ -1,4 +1,3 @@
-#include <string>
 #include "curl.hpp"
 
 using std::string;
@@ -11,9 +10,4 @@ Curl::Curl() {
 
 Curl::~Curl() {
     curl_global_cleanup();
-}
-
-size_t Curl::write_data(void *buffer, size_t size, size_t nmemb, void *userp) {
-    ((string*)userp)->append((char*)buffer, size * nmemb);
-    return size * nmemb;
 }
