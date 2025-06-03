@@ -1,7 +1,6 @@
 #ifndef GET_HPP
 #define GET_HPP
 
-#include <string>
 #include "request.hpp"
 
 #define GET "GET"
